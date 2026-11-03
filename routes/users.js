@@ -217,7 +217,7 @@ module.exports = function (router) {
                 await User.deleteOne({ _id: id }, { session: session });
             });
 
-            return send(res, 200, 'User deleted', user);
+            return res.status(204).end();
         } catch (err) {
             return serverError(res);
         }

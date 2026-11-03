@@ -276,7 +276,7 @@ module.exports = function (router) {
                 await Task.deleteOne({ _id: id }, { session: session });
             });
 
-            return send(res, 200, 'Task deleted', task);
+            return res.status(204).end();
         } catch (err) {
             return serverError(res);
         }
